@@ -35,7 +35,7 @@ const AdminDashboard = () => {
 
   const fetchAdminDataset = async () => {
     try {
-      const response = await axios.get('http://localhost/lostfound_backend/get_all_reports.php');
+      const response = await axios.get('  /get_all_reports.php');
       if (response.data.success) {
         setItems(response.data.items);
         if (response.data.users) {
