@@ -1,0 +1,276 @@
+/* Overlay to darken the background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+/* Modal Container */
+.report-modal {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.close-x {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+/* Form Layout */
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-row {
+  display: flex;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fcfcfc;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+  outline: none;
+  border-color: #000;
+  background-color: #fff;
+}
+
+.input-group textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Upload Section */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upload-section label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.upload-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.upload-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.upload-btn:hover {
+  background-color: #f5f5f5;
+}
+
+.file-name {
+  font-size: 12px;
+  color: #2e7d32;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Footer Buttons */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.cancel-btn {
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit-report-btn {
+  padding: 10px 24px;
+  background-color: #050509; /* Matching your black button theme */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.submit-report-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-report-btn:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+/* Container for the side-by-side comparison */
+.match-comparison-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* Individual columns for Found and Lost items */
+.match-column {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The picture box from your sketch */
+.match-pic-box {
+    width: 100%;
+    height: 160px;
+    background-color: #eee;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.match-pic-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Wide version of your modal to fit both columns */
+.match-detail-wide {
+    max-width: 700px !important;
+    width: 90% !important;
+}
+
+/* Text styling for the labels (Name, Loc, Username) */
+.match-column p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.match-column p strong {
+    color: #222;
+}
+
+/* Labels for Found (Green) and Lost (Red) */
+.label-found {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.label-lost {
+    color: #dc3545;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.match-pic-box {
+    width: 100%;
+    height: 180px; /* Adjust height as needed */
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.match-pic-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the image fill the box without stretching */
+}

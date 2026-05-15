@@ -1,0 +1,24 @@
+/* index.css */
+:root {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevents side scrolling */
+  background-color: #f8f9fa; /* Matches your dashboard background */
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box; /* Ensures padding doesn't push width over 100% */
+}

@@ -1,0 +1,55 @@
+/* GLOBAL STYLES */
+
+/* 1. THE FULL SCREEN FIX: Force the root to span edge-to-edge */
+#root, html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important; /* This overrides the Vite default */
+  min-height: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+  display: block; /* Ensures it doesn't behave like a centered flex item */
+}
+
+/* 2. Standardized button behaviors */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  border: none;
+}
+
+button:active {
+  transform: scale(0.98); /* Subtle "click" effect for all buttons */
+}
+
+/* 3. Global Input Focus (The glow effect when clicking boxes) */
+input:focus, select:focus {
+  outline: 2px solid #3b82f6;
+  background-color: #ffffff !important;
+}
+
+/* 4. Custom scrollbar for a professional look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 5. Utility class to ensure full layout stretching */
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
